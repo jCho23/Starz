@@ -28,7 +28,18 @@ namespace Starz
 		[Test]
 		public void AppLaunches()
 		{
-			app.Screenshot("First screen.");
+			app.Repl();
 		}
+
+		[Test]
+		public void FirstTest()
+		{
+			app.Tap(x => x.Class("android.widget.ImageButton").Index(0));
+
+
+
+		}
+
+
 	}
 }
