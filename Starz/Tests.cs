@@ -35,11 +35,13 @@ namespace Starz
 		public void FirstTest()
 		{
 			app.Tap(x => x.Class("android.widget.ImageButton").Index(0));
+			app.Tap("FEATURED");
+			app.Tap("key_art_image_view");
+
+
+
 
 
 
 		}
-
-
 	}
-}
