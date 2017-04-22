@@ -4,6 +4,7 @@ using System.Linq;
 using NUnit.Framework;
 using Xamarin.UITest;
 using Xamarin.UITest.Queries;
+using System.Threading;
 
 namespace Starz
 {
@@ -34,14 +35,18 @@ namespace Starz
 		[Test]
 		public void NoAccountTest()
 		{
+			app.WaitForElement(x => x.Class("android.widget.ImageButton").Index(0), timeout: TimeSpan.FromSeconds(80)); ;
 			app.Tap(x => x.Class("android.widget.ImageButton").Index(0));
+			app.Screenshot("Let's start by Tapping on the 'Hamburger Menu' Button");
 			app.Tap("FEATURED");
 			app.Tap("key_art_image_view");
 			app.Tap("action_search");
 
 			app.EnterText("Marvel");
 			app.Back();
+			Thread.Sleep(3000);
 			app.Back();
+			Thread.Sleep(3000);
 
 			app.Tap(x => x.Class("android.widget.ImageButton").Index(0));
 			app.Tap("MOVIES");
