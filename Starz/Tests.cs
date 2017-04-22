@@ -39,8 +39,11 @@ namespace Starz
 			app.Tap(x => x.Class("android.widget.ImageButton").Index(0));
 			app.Screenshot("Let's start by Tapping on the 'Hamburger Menu' Button");
 			app.Tap("FEATURED");
+			app.Screenshot("Then we Tapped on 'Featured'");
 			app.Tap("key_art_image_view");
+			app.Screenshot("Next we Tapped on the first result");
 			app.Tap("action_search");
+			app.Screenshot("We Tapped on the 'Search' Button");
 
 			app.EnterText("Marvel");
 			app.Back();
