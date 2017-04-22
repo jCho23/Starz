@@ -32,16 +32,28 @@ namespace Starz
 		}
 
 		[Test]
-		public void FirstTest()
+		public void NoAccountTest()
 		{
 			app.Tap(x => x.Class("android.widget.ImageButton").Index(0));
 			app.Tap("FEATURED");
 			app.Tap("key_art_image_view");
+			app.Tap("action_search");
 
+			app.EnterText("Marvel");
+			app.Back();
+			app.Back();
 
-
-
-
-
+			app.Tap(x => x.Class("android.widget.ImageButton").Index(0));
+			app.Tap("MOVIES");
+			app.Tap("key_art_image_view");
+			app.Tap("bb_play_button");
+			app.Screenshot("We Tap the 'Play' Button");
 		}
+
+
+
+
+
+
 	}
+}
